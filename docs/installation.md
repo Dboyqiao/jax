@@ -33,6 +33,7 @@ The table below shows all supported platforms and installation options. Check if
 | Google Cloud TPU | {ref}`yes <install-google-tpu>`       | n/a | n/a | n/a | n/a | n/a |
 | AMD GPU          | {ref}`experimental <install-amd-gpu>` | no | no | n/a | no | no |
 | Apple GPU    | n/a                                   | no | {ref}`experimental <install-apple-gpu>` | {ref}`experimental <install-apple-gpu>` | n/a |  n/a |
+| Intel GPU    | {ref}`experimental <install-intel-gpu>`            | n/a | n/a | n/a | no | no |
 
 
 (install-cpu)=
@@ -224,6 +225,22 @@ JAX has experimental ROCm support. There are two ways to install JAX:
 
 * Use [AMD's Docker container](https://hub.docker.com/r/rocm/jax); or
 * Build from source (refer to {ref}`building-from-source` — a section called _Additional notes for building a ROCM `jaxlib` for AMD GPUs_).
+
+(install-intel-gpu)=
+## Intel GPU
+
+### pip installation: Intel GPUs
+
+Intel provides an experimental plugin: intel-extension-for-openxla for Intel GPU hardware. For details,
+refer to
+[JAX acceleration on Intel GPU documentation](https://github.com/intel/intel-extension-for-openxla/blob/main/docs/acc_jax.md).
+
+**Note:** There are several caveats with the plugin:
+
+* The intel-extension-for-openxla plugin is new and experimental. Please report any issues on the JAX issue tracker.
+* The intel-extension-for-openxla plugin currently requires very specific versions of `jax` and
+  `jaxlib`. This restriction will be relaxed over time as the plugin API
+  matures.
 
 ## Conda (community-supported)
 
